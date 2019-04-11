@@ -1,22 +1,43 @@
 // Crie uma função que calcule o índice de massa corporal de uma pessoa (IMC)
 
-function calcularIMC(){
-    var altura = prompt("Qual a sua altura?");
-    var peso = prompt("Qual o seu peso?");
-    var calculo = (peso/(altura * altura). toFixed(2));
+function calculoIMC(){
+    var altura = document.getElementById("altura").value;
+    var peso = document.getElementById("peso").value;
+    var resposta = document.getElementById("resposta");
+    var lugarGif= document.getElementById("lugarGif");
+    var calculo = peso / (altura * altura);
+    var text;
+    var gif;
+    var cssClass;
 
-    console.log("Seu IMC é igual a:  " + calculo);
 
-    if (calculo < 18.5){
-        alert("Você está abaixo do peso. Seu índice é: " + calculo);
+    if (calculo < 18){
+        text = "Uma deusa.";
+        gif = `<img src="https://media.giphy.com/media/409PWZc3bFWY8/giphy.gif" alt="Gif Michelle Obama">`;
+        cssClass = "linha1";
     }
-    else if(calculo >= 18.5 && calculo < 25){
-        alert("Você está normal. Seu índice é: " + calculo);
+    else if(calculo >= 18 && calculo < 25){
+        text = "Uma louca.";
+        gif = `<img src="https://media.giphy.com/media/3o7TKTMbvS3uzlewsU/giphy.gif" alt="Gif Michelle Obama">`;
+        cssClass = "linha2";
     }
-    else if(calculo >=25 && calculo < 30){
-        alert ("Você está com sobrepeso. Seu índice é: " + calculo);
+    else if( calculo >= 25 && resultado < 30){
+        text = "Uma feiticeira.";
+        gif = `<img src="https://media.giphy.com/media/3o7TKziIuXtAI2vtPa/giphy.gif" alt="Gif Michelle Obama">`;
+        cssClass = "linha3";
+    }
+    else if(calculo >= 30 && calculo < 40){
+        text = "Ela é demais.";
+        gif = `<img src="https://media.giphy.com/media/M8zA3KUETXbdm/giphy.gif" alt="Gif Michelle Obama">`;
+        cssClass = "linha4";
     }
     else{
-        alert ("Você está com obesidade. Seu índice é: " + calculo);
+        text = "Meu deus ela é demais.";
+        gif = `<img src="https://media.giphy.com/media/TI8yz4eu34zDO/giphy.gif" alt="Gif Michelle Obama">`;
+        cssClass = "linha5";
     }
+
+    resposta.innerHTML = calculo.toFixed(2) + " - " + text;
+    lugarGif.innerHTML = gif; 
+    resposta.className = cssClass;
 }

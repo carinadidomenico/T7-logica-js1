@@ -1,5 +1,7 @@
 // Declare uma variável que receba um objeto vazio.
 
+var objeto = {}
+
 /*
 Declare uma variável `pessoa`, que receba as suas informações pessoais, seguindo os tipos definidos abaixo:
 - `nome` - String
