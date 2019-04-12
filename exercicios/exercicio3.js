@@ -13,11 +13,26 @@ Declare uma variável `pessoa`, que receba as suas informações pessoais, segui
 - `caminhouQuantosMetros` - Number - recebe "zero" por padrão
 */
 
+var pessoa = {
+    nome: "Carina",
+    sobrenome: "Di Domenico",
+    idade: 23,
+    altura: 1.62,
+    reprograma: "Mulheres Maravilhosas",
+    andando: false,
+    caminhouQuantosMetros: 0,
+}
+
 /*
 Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método deve
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
+
+pessoa.fazerAniversario = function(){
+    pessoa.idade++;
+    return pessoa.idade;
+}
 
 /*
 Adicione um método ao objeto `pessoa` chamado `andar`, que terá as seguintes
@@ -30,25 +45,48 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 
+pessoa.andar = function (metros){
+    var metros;
+    pessoa.caminhouQuantosMetros += metros;
+    pessoa.andando = true;
+    return pessoa.caminhouQuantosMetros;
+}
+
 /*
 Adicione um método ao objeto `pessoa` chamado `parar`, que irá modificar o valor
 da propriedade `andando` para o valor booleano que representa "falso".
 */
+
+pessoa.parar = function(){
+    pessoa.andando = false;
+}
 
 /*
 Crie um método chamado `meuNomeCompleto`, que retorne a frase:
 - "Meu nome é [NOME] [SOBRENOME]"
 */
 
+function meuNomeCompleto (){
+    return ("Meu nome é " + pessoa.nome + " " + pessoa.sobrenome);
+}
+
 /*
 Crie um método chamado `mostrarIdade`, que retorne a frase:
 - "eu tenho [IDADE] anos"
 */
 
+function mostrarIdade (){
+    return ("Eu tenho " + pessoa.idade + " anos");
+}
+
 /*
 Crie um método chamado `mostrarAltura` que retorne a frase:
 - "minha altura é [ALTURA]"
 */
+
+function mostrarAltura(){
+    return ("Minha altura é " + pessoa.altura)
+}
 
 /*
 Agora vamos mostrar as informações do objeto criado!
@@ -92,4 +130,23 @@ Quantos metros a pessoa andou?
 Crie um método para o objeto `pessoa` chamado `apresentacao`. Esse método deve
 retornar a string:
 - "Olá! Meu nome é [NOME COMPLETO], tenho [IDADE] anos, [ALTURA], e, só hoje, eu já caminhei [CAMINHOU QUANTOS METROS] metros!"
-*/
+*/ 
+
+function apresentacao (){
+    return ("Olá! " + meuNomeCompleto() + ". " + mostrarIdade() + ". " + mostrarAltura() + ". " )
+}
+
+// Exemplo Ana:
+
+var frutas = ["banana", "uva", "maça", "salada-mista"];
+
+for (contador = 0; contador < frutas.length; contador++){
+    console.log(frutas[contador])
+}
+
+
+function salada(){
+    for (contador = 0; contador < frutas.length; contador++){
+        console.log(frutas[contador])
+    }
+}
